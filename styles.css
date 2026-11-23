@@ -1,0 +1,55 @@
+/* ===== 1. IDENTIDAD VISUAL: cambia colores y tipografías aquí ===== */
+:root{
+  --ink:#16262e; --muted:#5b6b73; --bg:#eef2f3; --paper:#fff; --line:#d3dde0;
+  --teal:#1d6b74; --teal-d:#12474d; --sun:#e2a72e; --ok:#2c7a4b; --bad:#b23f2a;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;font:1.05rem/1.6 var(--sans);color:var(--ink);background:var(--bg)}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0 0 .6em}
+h1{font-size:clamp(2.2rem,6vw,4.2rem);font-weight:700;letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,3.5vw,2.3rem)} h3{font-size:1.25rem}
+p{margin:0 0 1em;max-width:68ch}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+/* Barra superior */
+.top{position:sticky;top:0;z-index:5;display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:.6rem 1.2rem;background:var(--teal-d);color:#fff}
+.brand{font:700 1.1rem var(--serif);color:#fff;text-decoration:none}
+#nav{display:flex;gap:.4rem;flex-wrap:wrap}
+#nav button{background:transparent;color:#fff;border:1px solid #ffffff55;border-radius:99px;padding:.3rem .9rem;font:inherit;font-size:.9rem;cursor:pointer;position:relative;overflow:hidden}
+#nav button.on{background:#fff;color:var(--teal-d)}
+#nav i{position:absolute;left:0;bottom:0;height:3px;background:var(--sun)}
+main{max-width:980px;margin:0 auto;padding:1.5rem 1.2rem 4rem}
+/* Portada: reemplaza el fondo por una imagen con background-image si lo deseas */
+.hero{background:linear-gradient(135deg,var(--teal-d),var(--teal));color:#fff;border-radius:6px;padding:clamp(2rem,7vw,5rem) clamp(1.2rem,5vw,4rem);margin-bottom:2rem;animation:rise .7s ease both}
+.hero .sub{font:1.3rem var(--serif);font-style:italic;color:#d6ecee;max-width:40ch}
+.hero .guide{margin-top:2rem;padding:1rem 1.2rem;border-left:4px solid var(--sun);background:#ffffff14;max-width:60ch}
+.areas{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.2rem 0}
+.tag{display:inline-block;border-radius:3px;padding:.1rem .6rem;font-size:.85rem;font-weight:600;background:#ffffff22}
+.tag.l{background:#f3d9c6;color:#6a3416}.tag.s{background:#cfe6d4;color:#1f4d30}.tag.e{background:#cfdcf3;color:#1f3a6a}
+.mods{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.mod{background:var(--paper);border:1px solid var(--line);border-top:5px solid var(--teal);padding:1.2rem;text-align:left;font:inherit;cursor:pointer;color:inherit}
+.mod:hover{border-top-color:var(--sun)}
+/* Actividades */
+.step{background:var(--paper);border:1px solid var(--line);padding:clamp(1rem,4vw,2.2rem);animation:rise .4s ease both}
+.step.read{border-left:6px solid var(--teal)} .step.quiz{border-left:6px solid var(--sun)} .step.write{border-left:6px solid var(--ok)}
+.ctx{background:#e6f1f2;padding:.8rem 1rem;border-radius:4px;font-size:.95rem;margin:1rem 0}
+.fict{font-size:.82rem;color:var(--muted);margin:-.4rem 0 1rem}
+.item{border-top:1px solid var(--line);padding:1.1rem 0}
+.item blockquote{margin:0 0 .8rem;font:1.15rem var(--serif);border-left:3px solid var(--line);padding-left:.8rem}
+.opts{display:grid;gap:.5rem}
+.opts button{text-align:left;font:inherit;background:var(--bg);border:2px solid transparent;padding:.6rem .8rem;cursor:pointer;border-radius:4px}
+.opts button:hover:not(:disabled){border-color:var(--teal)}
+.opts button.right{border-color:var(--ok);background:#e2f2e8} .opts button.wrong{border-color:var(--bad);background:#f7e3df}
+.fb{margin-top:.8rem;padding:.8rem 1rem;border-radius:4px;font-size:.97rem;animation:rise .3s ease both}
+.fb.ok{background:#e2f2e8} .fb.no{background:#f7e3df}
+textarea,select{width:100%;font:inherit;padding:.7rem;border:1px solid var(--line);border-radius:4px;background:#fbfdfd}
+label{display:block;font-weight:600;margin:1rem 0 .3rem}
+.bar{display:flex;justify-content:space-between;gap:1rem;margin-top:1.5rem}
+.btn{font:inherit;font-weight:600;border:0;border-radius:4px;padding:.7rem 1.3rem;cursor:pointer;background:var(--teal);color:#fff}
+.btn.ghost{background:transparent;color:var(--teal-d);border:1px solid var(--teal)}
+.prog{font-size:.9rem;color:var(--muted);margin-bottom:.8rem}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:1rem}
+@media print{.top,.bar,footer{display:none}}
